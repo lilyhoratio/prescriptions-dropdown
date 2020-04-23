@@ -32,8 +32,6 @@ function Medication({
         <span id="snowflake">{Math.random() >= 0.5 && "❄️"}</span>
         {/* <span className="">{isRefrigerated ? "❄️" : ""}</span> */}
       </div>
-
-      {/* {!seePackageInfo && ( */}
       <div
         className={`Medication-package-info ${
           !seePackageInfo ? "open" : "closed"

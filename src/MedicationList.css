@@ -1,18 +1,8 @@
 .MedicationList {
-  width: 70%;
-  /* height: auto; */
-
-  /* overflow-y:scroll; */
+  width: 65%;
+  overflow-y: scroll;
   background-color: white;
-  margin: 0 auto 50px;
+  margin: 0 auto 20px;
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 10px 12px rgba(0, 0, 0, 0.1);
-}
-
-.MedicationList-header {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-  margin: 0 auto;
-  background-color: var(--lightbeige);
 }
