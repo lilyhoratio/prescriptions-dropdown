@@ -4,8 +4,6 @@
   align-items: center;
   justify-content: center;
   margin: 20px auto;
-
-  /* margin-bottom: 2rem; */
 }
 
 input {
@@ -18,10 +16,7 @@ input {
   font-size: 1rem;
 }
 
+/* 
 input::placeholder {
-  /* color: var(--navyblue); */
-}
-
-.MedicationSearchbar-name {
-  padding: 10px;
-}
+  color: var(--navyblue);
+} */
