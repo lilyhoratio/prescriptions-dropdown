@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MedicationList from "./MedicationList";
+import MedicationSearchbar from "./MedicationSearchbar";
+import { medications } from "./data/data";
 
 function App() {
+  const [searchFilter, setSearchFilter] = useState({
+    name: "",
+    strength: "",
+  });
+
+  const filteredMedications = medications.filter((medication) => {
+    const hasNameMatch = medication.name
+      .toLowerCase()
+      .includes(searchFilter.name.toLowerCase());
+
+    const hasStrengthMatch =
+      medication.strength &&
+      medication.strength
+        .toLowerCase()
+        .includes(searchFilter.strength.toLowerCase());
+
+    const hasFacilityMatch = medication.facility === "SF";
+
+    return hasNameMatch && hasStrengthMatch && hasFacilityMatch;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Search for a medication</h1>
+      <form>
+        <MedicationSearchbar setFilterText={setSearchFilter} />
+      </form>
+
+      <MedicationList
+        setSearchFilter={setSearchFilter}
+        medications={filteredMedications}
+      />
     </div>
   );
 }

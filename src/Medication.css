@@ -1,0 +1,46 @@
+.Medication {
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: all 0.4s ease;
+}
+
+.Medication-main-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Medication-name {
+  /* font-weight: bold; */
+}
+
+.Medication-strength {
+}
+
+.Medication:hover {
+  cursor: pointer;
+  background-color: var(--lightgreen);
+}
+
+.Medication-extra-info {
+  display: flex;
+  flex-direction: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.Medication-tag {
+  padding: 3px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+.brand {
+  background-color: var(--lightpink);
+}
+
+.generic {
+  background-color: var(--lightgreen);
+}
