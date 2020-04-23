@@ -31,6 +31,8 @@ function App() {
 
   const reset = () => {
     setSearchFilter(emptySearch);
+
+    // also need to reset any meds with expanded product package info back to closed
   };
 
   return (
