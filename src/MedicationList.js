@@ -13,6 +13,7 @@ function MedicationList({ medications, setSearchFilter, setFilterText }) {
           strength={med.strength}
           isBrand={med.is_brand}
           isRefrigerated={med.refrigerated}
+          productPackages={med.product_packages}
           setSearchFilter={setSearchFilter}
           setFilterText={setFilterText}
         />

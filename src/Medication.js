@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Medication.css";
 
 function Medication({
@@ -7,11 +7,17 @@ function Medication({
   setSearchFilter,
   isBrand,
   // isRefrigerated,
+  productPackages,
 }) {
+  const [seePackageInfo, setSeePackageInfo] = useState(true);
+
   const handleClick = () => {
     setSearchFilter({ name, strength });
   };
 
+  const handleExpansion = () => {
+    setSeePackageInfo(!seePackageInfo);
+  };
   return (
     <div className="Medication" onClick={handleClick}>
       <div className="Medication-main-info">
@@ -25,6 +31,14 @@ function Medication({
         <span>❄️</span>
         {/* <span className="">{isRefrigerated ? "❄️" : ""}</span> */}
       </div>
+      <div onClick={handleExpansion}>
+        {seePackageInfo ? "View Product Packages" : "Collapse"}
+      </div>
+      {!seePackageInfo && (
+        <div>
+          {productPackages && productPackages.map((p) => <p>{p.id}</p>)}
+        </div>
+      )}
     </div>
   );
 }

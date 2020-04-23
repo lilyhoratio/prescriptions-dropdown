@@ -29,10 +29,7 @@ function App() {
   return (
     <div className="App">
       <h1>Search for a medication</h1>
-      <form>
-        <MedicationSearchbar setFilterText={setSearchFilter} />
-      </form>
-
+      <MedicationSearchbar setFilterText={setSearchFilter} />
       <MedicationList
         setSearchFilter={setSearchFilter}
         medications={filteredMedications}

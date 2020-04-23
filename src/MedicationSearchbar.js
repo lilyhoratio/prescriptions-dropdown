@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./MedicationSearchbar.css";
 
 function MedicationSearchbar({ setFilterText }) {
   const [searchtext, setSearchtext] = useState({ name: "", strength: "" });
@@ -14,9 +15,10 @@ function MedicationSearchbar({ setFilterText }) {
   };
 
   return (
-    <>
+    <div className="MedicationSearchbar">
       <input
         type="text"
+        className="MedicationSearchbar-name"
         placeholder="Name (e.g. Ibuprofen)"
         name="name"
         onChange={handleChange}
@@ -25,12 +27,13 @@ function MedicationSearchbar({ setFilterText }) {
 
       <input
         type="text"
+        className="MedicationSearchbar-strength"
         placeholder="Strength (e.g. 220 MG)"
         name="strength"
         onChange={handleChange}
         value={searchtext.strength}
       />
-    </>
+    </div>
   );
 }
 
