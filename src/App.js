@@ -4,11 +4,13 @@ import MedicationList from "./MedicationList";
 import MedicationSearchbar from "./MedicationSearchbar";
 import { medications } from "./data/data";
 
+const emptySearch = {
+  name: "",
+  strength: "",
+};
+
 function App() {
-  const [searchFilter, setSearchFilter] = useState({
-    name: "",
-    strength: "",
-  });
+  const [searchFilter, setSearchFilter] = useState(emptySearch);
 
   // More efficient to use trie ?
   const filteredMedications = medications.filter((medication) => {
@@ -27,16 +29,24 @@ function App() {
     return hasNameMatch && hasStrengthMatch && hasFacilityMatch;
   });
 
+  const reset = () => {
+    setSearchFilter(emptySearch);
+  };
+
   return (
     <div className="App">
       <MedicationSearchbar
         searchFilter={searchFilter}
         setFilterText={setSearchFilter}
       />
+      <button className="App-reset-button" onClick={reset}>
+        Reset
+      </button>
+
       <MedicationList
         setSearchFilter={setSearchFilter}
         medications={filteredMedications}
-        maxHeight={"600px"}
+        maxHeight={"510px"}
       />
     </div>
   );

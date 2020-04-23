@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+.App-reset-button {
+  border: none;
+  background: none;
+  background-color: var(--navyblue);
+  border-radius: 3px;
+  padding: 8px;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.App-reset-button:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+}
