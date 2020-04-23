@@ -2,8 +2,9 @@
   border-bottom: 1px solid #eeeeee;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.8rem;
   transition: all 0.4s ease;
+  border-radius: 2px;
 }
 
 .Medication-main-info {
@@ -12,10 +13,7 @@
 }
 
 .Medication-name {
-  /* font-weight: bold; */
-}
-
-.Medication-strength {
+  font-weight: 500;
 }
 
 .Medication:hover {
@@ -43,4 +41,14 @@
 
 .generic {
   background-color: var(--lightgreen);
+}
+
+.Medication-button {
+  font-size: 0.6rem;
+  /* position: fixed;
+  bottom: 0; */
+}
+
+.Medication-package-info {
+  font-size: 0.8rem;
 }

@@ -31,12 +31,19 @@ function Medication({
         <span>❄️</span>
         {/* <span className="">{isRefrigerated ? "❄️" : ""}</span> */}
       </div>
-      <div onClick={handleExpansion}>
-        {seePackageInfo ? "View Product Packages" : "Collapse"}
+      <div className="Medication-button" onClick={handleExpansion}>
+        {seePackageInfo ? "View Packages" : "Collapse"}
       </div>
       {!seePackageInfo && (
-        <div>
-          {productPackages && productPackages.map((p) => <p>{p.id}</p>)}
+        <div className="Medication-package-info">
+          {productPackages &&
+            productPackages
+              .sort((a, b) => a.size - b.size)
+              .map((p) => (
+                <p>
+                  SKU #{p.sku}: {p.size} day supply
+                </p>
+              ))}
         </div>
       )}
     </div>
