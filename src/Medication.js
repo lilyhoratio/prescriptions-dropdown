@@ -28,7 +28,7 @@ function Medication({
         <span className={`Medication-tag ${isBrand ? "brand" : "generic"}`}>
           {isBrand ? "Brand" : "Generic"}
         </span>
-        <span>❄️</span>
+        <span>{Math.random() >= 0.5 && "❄️"}</span>
         {/* <span className="">{isRefrigerated ? "❄️" : ""}</span> */}
       </div>
       <div className="Medication-button" onClick={handleExpansion}>
