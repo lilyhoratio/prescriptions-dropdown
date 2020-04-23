@@ -45,10 +45,22 @@
 
 .Medication-button {
   font-size: 0.6rem;
-  /* position: fixed;
-  bottom: 0; */
+  /* position: fixed; */
 }
 
 .Medication-package-info {
   font-size: 0.8rem;
+  transition: height 0.5s ease;
+  overflow: hidden;
 }
+
+.open {
+  height: 80px;
+}
+
+.closed {
+  height: 0px;
+}
+
+/* #snowflake {
+} */

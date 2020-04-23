@@ -2,17 +2,25 @@ import React from "react";
 import Medication from "./Medication";
 import "./MedicationList.css";
 
-function MedicationList({ medications, setSearchFilter, setFilterText }) {
+function MedicationList({
+  medications,
+  setSearchFilter,
+  setFilterText,
+  maxHeight,
+}) {
   return (
     <>
-      <div
+      {/* <div
         className="MedicationList-header"
         style={{ position: "sticky", top: "20px" }}
       >
         <p>Medication name</p>
         <p>Strength</p>
-      </div>
-      <div className="MedicationList">
+      </div> */}
+      <div
+        className="MedicationList"
+        style={{ maxHeight: `${maxHeight}`, overflowY: "scroll  " }}
+      >
         {medications.map((med) => (
           <Medication
             key={med.id}

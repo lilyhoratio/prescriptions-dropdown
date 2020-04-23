@@ -1,6 +1,8 @@
 .MedicationList {
   width: 70%;
-  height: auto;
+  /* height: auto; */
+
+  /* overflow-y:scroll; */
   background-color: white;
   margin: 0 auto 50px;
   border-radius: 5px;

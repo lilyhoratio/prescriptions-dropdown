@@ -18,6 +18,7 @@ function Medication({
   const handleExpansion = () => {
     setSeePackageInfo(!seePackageInfo);
   };
+
   return (
     <div className="Medication" onClick={handleClick}>
       <div className="Medication-main-info">
@@ -28,24 +29,29 @@ function Medication({
         <span className={`Medication-tag ${isBrand ? "brand" : "generic"}`}>
           {isBrand ? "Brand" : "Generic"}
         </span>
-        <span>{Math.random() >= 0.5 && "❄️"}</span>
+        <span id="snowflake">{Math.random() >= 0.5 && "❄️"}</span>
         {/* <span className="">{isRefrigerated ? "❄️" : ""}</span> */}
       </div>
-      <div className="Medication-button" onClick={handleExpansion}>
+
+      {/* {!seePackageInfo && ( */}
+      <div
+        className={`Medication-package-info ${
+          !seePackageInfo ? "open" : "closed"
+        }`}
+      >
+        {productPackages &&
+          productPackages
+            .sort((a, b) => a.size - b.size)
+            .map((p) => (
+              <p>
+                SKU #{p.sku}: {p.size} day supply
+              </p>
+            ))}
+      </div>
+      {/* )} */}
+      <div className={"Medication-button"} onClick={handleExpansion}>
         {seePackageInfo ? "View Packages" : "Collapse"}
       </div>
-      {!seePackageInfo && (
-        <div className="Medication-package-info">
-          {productPackages &&
-            productPackages
-              .sort((a, b) => a.size - b.size)
-              .map((p) => (
-                <p>
-                  SKU #{p.sku}: {p.size} day supply
-                </p>
-              ))}
-        </div>
-      )}
     </div>
   );
 }

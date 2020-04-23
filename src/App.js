@@ -5,10 +5,13 @@ import MedicationSearchbar from "./MedicationSearchbar";
 import { medications } from "./data/data";
 
 function App() {
+  // State
   const [searchFilter, setSearchFilter] = useState({
     name: "",
     strength: "",
   });
+
+  // More efficient to use trie ?
 
   const filteredMedications = medications.filter((medication) => {
     const hasNameMatch = medication.name
@@ -29,10 +32,14 @@ function App() {
   return (
     <div className="App">
       <h1>Search for a medication</h1>
-      <MedicationSearchbar setFilterText={setSearchFilter} />
+      <MedicationSearchbar
+        searchFilter={searchFilter}
+        setFilterText={setSearchFilter}
+      />
       <MedicationList
         setSearchFilter={setSearchFilter}
         medications={filteredMedications}
+        maxHeight={"600px"}
       />
     </div>
   );
